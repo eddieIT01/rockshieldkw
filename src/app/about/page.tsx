@@ -7,7 +7,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 
 export const metadata: Metadata = {
   title: 'About Rock Shield Kuwait — XPEL Authorized Distributor & Installer',
-  description: 'Learn about Rock Shield Kuwait — our story, our team, our commitment to automotive protection excellence, and our authorized XPEL partnership.',
+  description: 'Learn about Rock Shield Kuwait — our story, our team, our commitment to automotive protection excellence, and our authorized XPEL partnership.'
 };
 
 export default function AboutPage() {
@@ -15,17 +15,47 @@ export default function AboutPage() {
     <>
       <Header />
       <main>
-        {/* Page Hero */}
-        <section className="pt-40 pb-20 bg-background">
+        {/* Page Hero — with real Rock Shield vehicle photography */}
+        <section className="relative pt-40 pb-24 bg-background overflow-hidden">
+          {/* Amber accent top bar */}
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary" />
+          {/* Subtle amber glow */}
+          <div
+            className="absolute top-0 right-0 w-[600px] h-[400px] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at top right, rgba(212,160,23,0.06) 0%, transparent 65%)'
+            }} />
+          
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-px bg-primary" />
-              <span className="text-primary text-xs font-semibold tracking-[0.3em] uppercase">About Us</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-px bg-primary" />
+                  <span className="text-primary text-xs font-semibold tracking-[0.3em] uppercase">About Us</span>
+                </div>
+                <h1 className="font-display text-hero text-foreground max-w-3xl">
+                  Rock Shield.<br />
+                  <span className="text-primary">Your Choice.</span>
+                </h1>
+                <p className="text-muted-foreground text-lg mt-6 max-w-lg leading-relaxed">
+                  Kuwait&apos;s authorized XPEL distributor and installer — protecting vehicles with precision craftsmanship since day one.
+                </p>
+              </div>
+              {/* Real Rock Shield vehicle image */}
+              <div className="relative aspect-[4/3] overflow-hidden bg-card border border-border">
+                <img
+                  src="https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp"
+                  alt="Rock Shield Kuwait — XPEL paint protection film on a Lamborghini Huracan STO"
+                  className="w-full h-full object-cover object-center"
+                  loading="eager" />
+                
+                {/* Amber corner accent */}
+                <div className="absolute top-0 left-0 w-10 h-0.5 bg-primary" />
+                <div className="absolute top-0 left-0 w-0.5 h-10 bg-primary" />
+                <div className="absolute bottom-0 right-0 w-10 h-0.5 bg-primary/40" />
+                <div className="absolute bottom-0 right-0 w-0.5 h-10 bg-primary/40" />
+              </div>
             </div>
-            <h1 className="font-display text-hero text-foreground max-w-3xl">
-              Rock Shield.<br />
-              <span className="text-primary">Your Choice.</span>
-            </h1>
           </div>
         </section>
 
@@ -54,24 +84,24 @@ export default function AboutPage() {
               <div className="flex flex-col gap-6">
                 {/* Values */}
                 {[
-                  {
-                    title: 'Expert Engineers',
-                    desc: 'With a team of highly skilled professionals and a wealth of experience, we specialize in providing innovative solutions tailored to your specific requirements.'
-                  },
-                  {
-                    title: 'Experience & Skills',
-                    desc: 'With a focus on real-world applications and continuous learning, our team is equipped with the knowledge, confidence, and adaptability needed to deliver exceptional results.'
-                  },
-                  {
-                    title: 'Guaranteed Service',
-                    desc: 'Ensures peace of mind and satisfaction for every client. Backed by our commitment to excellence, we stand behind the quality of our products and services.'
-                  },
-                  {
-                    title: 'Trusted Work',
-                    desc: 'With a proven track record of delivering superior results, our team is committed to upholding the highest standards of professionalism, integrity, and craftsmanship.'
-                  }
-                ].map((item, i) => (
-                  <div key={item.title} className="flex gap-5 p-6 border border-border hover:border-primary/40 transition-colors">
+                {
+                  title: 'Expert Engineers',
+                  desc: 'With a team of highly skilled professionals and a wealth of experience, we specialize in providing innovative solutions tailored to your specific requirements.'
+                },
+                {
+                  title: 'Experience & Skills',
+                  desc: 'With a focus on real-world applications and continuous learning, our team is equipped with the knowledge, confidence, and adaptability needed to deliver exceptional results.'
+                },
+                {
+                  title: 'Guaranteed Service',
+                  desc: 'Ensures peace of mind and satisfaction for every client. Backed by our commitment to excellence, we stand behind the quality of our products and services.'
+                },
+                {
+                  title: 'Trusted Work',
+                  desc: 'With a proven track record of delivering superior results, our team is committed to upholding the highest standards of professionalism, integrity, and craftsmanship.'
+                }].
+                map((item, i) =>
+                <div key={item.title} className="flex gap-5 p-6 border border-border hover:border-primary/40 transition-colors">
                     <div className="flex-shrink-0 w-8 h-8 border border-primary rounded-full flex items-center justify-center text-primary text-xs font-mono">
                       {String(i + 1).padStart(2, '0')}
                     </div>
@@ -80,7 +110,7 @@ export default function AboutPage() {
                       <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -147,6 +177,6 @@ export default function AboutPage() {
       </main>
       <Footer />
       <WhatsAppFloat />
-    </>
-  );
+    </>);
+
 }

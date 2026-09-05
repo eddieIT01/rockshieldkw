@@ -95,16 +95,14 @@ export default function TrustSection() {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {reviews?.map((review, i) => (
             <div
               key={review?.name}
-              className={`reveal-up bg-background border border-border p-7 flex flex-col gap-5 ${
-                i === 0 ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+              className="reveal-up bg-background border border-border hover:border-primary/25 transition-colors duration-300 p-7 flex flex-col gap-5"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {/* Stars */}
+              {/* Stars — amber */}
               <div className="flex gap-0.5">
                 {Array.from({ length: review?.rating })?.map((_, j) => (
                   <svg key={j} className="w-3.5 h-3.5 text-primary fill-current" viewBox="0 0 20 20">
@@ -126,7 +124,7 @@ export default function TrustSection() {
                 <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0 bg-muted">
                   <AppImage
                     src={review?.avatar}
-                    alt={`${review?.name} profile photo`}
+                    alt={`${review?.name} — Google review for Rock Shield Kuwait`}
                     width={36}
                     height={36}
                     className="w-full h-full object-cover"

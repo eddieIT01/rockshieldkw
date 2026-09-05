@@ -8,31 +8,31 @@ import Footer from '@/components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Real Rock Shield / XPEL brand photography from official sources
+// Real Rock Shield / XPEL brand photography from official rockshieldkw.com
 const serviceImages: Record<string, {src: string;alt: string;}> = {
   ppf: {
-    src: "https://img.rocket.new/generatedImages/rocket_gen_img_4009c3c67-1788648777448.png",
-    alt: 'XPEL paint protection film being applied to a Lamborghini at Rock Shield Kuwait'
+    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp",
+    alt: 'XPEL Ultimate Plus paint protection film on a Lamborghini at Rock Shield Kuwait'
   },
   'window-tint': {
-    src: "https://img.rocket.new/generatedImages/rocket_gen_img_4d7d4ba7c-1788648776202.png",
-    alt: 'XPEL PRIME window tint film installation at Rock Shield Kuwait'
+    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-p.png",
+    alt: 'XPEL PRIME window tint film — Rock Shield Kuwait authorized installer'
   },
   'window-shield': {
-    src: "https://img.rocket.new/generatedImages/rocket_gen_img_44891a3ae-1788648776105.png",
-    alt: 'Windshield protection film installation at Rock Shield Kuwait'
+    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/ULTIMATE-PLUS-Logo-1024x241-1.png",
+    alt: 'XPEL windshield protection film — Rock Shield Kuwait'
   },
   ceramic: {
-    src: "https://img.rocket.new/generatedImages/rocket_gen_img_1770a34f6-1768003597485.png",
-    alt: 'XPEL FUSION PLUS ceramic coating application at Rock Shield Kuwait'
+    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-fu.png",
+    alt: 'XPEL FUSION PLUS ceramic coating — Rock Shield Kuwait authorized installer'
   },
   detailing: {
-    src: "https://img.rocket.new/generatedImages/rocket_gen_img_404af089c-1788648777461.png",
+    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp",
     alt: 'Professional car detailing service at Rock Shield Kuwait'
   },
   painting: {
-    src: "https://img.rocket.new/generatedImages/rocket_gen_img_474545458-1788648775156.png",
-    alt: 'Professional automotive painting service at Rock Shield Kuwait'
+    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-st.png",
+    alt: 'Professional automotive painting service — Rock Shield Kuwait'
   }
 };
 
@@ -158,7 +158,7 @@ export default function ServicesPage() {
       <main ref={sectionRef}>
         {/* Page Hero */}
         <section className="pt-40 pb-20 bg-background relative overflow-hidden">
-          {/* Red accent top bar */}
+          {/* Amber accent top bar */}
           <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary" />
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex items-center gap-3 mb-6 reveal-up">

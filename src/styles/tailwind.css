@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #0A0909;
-  --foreground: #F5F2EE;
-  --primary: #C8244A;
-  --primary-foreground: #FFFFFF;
-  --secondary: #1A1816;
-  --secondary-foreground: #F5F2EE;
-  --accent: #C8244A;
-  --accent-foreground: #FFFFFF;
-  --muted: #1E1B18;
-  --muted-foreground: #857E76;
-  --card: #141210;
-  --card-foreground: #F5F2EE;
-  --border: #2A2520;
-  --input: #2A2520;
-  --ring: #C8244A;
+  /* Rock Shield Kuwait — Authentic Brand Palette */
+  /* Deep charcoal-navy: the studio, the craft, the precision */
+  --background: #0E1014;
+  --foreground: #F0EEE9;
+  /* XPEL Amber — the signature accent, uniquely Rock Shield */
+  --primary: #D4A017;
+  --primary-foreground: #0E1014;
+  --secondary: #181B21;
+  --secondary-foreground: #F0EEE9;
+  /* Silver/platinum — the film, the protection layer */
+  --accent: #C4C8D0;
+  --accent-foreground: #0E1014;
+  --muted: #1C2028;
+  --muted-foreground: #7A8090;
+  --card: #13161C;
+  --card-foreground: #F0EEE9;
+  --border: #252A34;
+  --input: #252A34;
+  --ring: #D4A017;
   --radius: 0.375rem;
   --font-sans: 'DM Sans', sans-serif;
 }
@@ -92,45 +96,51 @@
   }
 
   .glass-dark {
-    background: rgba(20, 18, 16, 0.7);
+    background: rgba(19, 22, 28, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(200, 150, 90, 0.12);
+    border: 1px solid rgba(212, 160, 23, 0.12);
   }
 
   .glass-panel {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.025);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
+  /* Amber-gold gradient — XPEL signature */
   .gold-gradient {
-    background: linear-gradient(135deg, #C8244A 0%, #E8445A 50%, #A01838 100%);
+    background: linear-gradient(135deg, #D4A017 0%, #F0C040 50%, #B8880E 100%);
   }
 
   .text-gold-gradient {
-    background: linear-gradient(135deg, #C8244A 0%, #E8445A 60%, #C8244A 100%);
+    background: linear-gradient(135deg, #D4A017 0%, #F0C040 60%, #D4A017 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
+  /* Silver shimmer — the protection film */
+  .silver-gradient {
+    background: linear-gradient(135deg, #8A9099 0%, #C4C8D0 40%, #E8EAF0 60%, #C4C8D0 100%);
+  }
+
   .hero-scrim {
     background: linear-gradient(
       to top,
-      rgba(10, 9, 9, 0.95) 0%,
-      rgba(10, 9, 9, 0.7) 35%,
-      rgba(10, 9, 9, 0.3) 65%,
-      rgba(10, 9, 9, 0.1) 100%
+      rgba(14, 16, 20, 0.97) 0%,
+      rgba(14, 16, 20, 0.75) 35%,
+      rgba(14, 16, 20, 0.35) 65%,
+      rgba(14, 16, 20, 0.08) 100%
     );
   }
 
   .hero-scrim-left {
     background: linear-gradient(
       to right,
-      rgba(10, 9, 9, 0.85) 0%,
-      rgba(10, 9, 9, 0.5) 50%,
+      rgba(14, 16, 20, 0.88) 0%,
+      rgba(14, 16, 20, 0.5) 50%,
       transparent 100%
     );
   }
@@ -138,9 +148,9 @@
   .service-card-overlay {
     background: linear-gradient(
       to top,
-      rgba(10, 9, 9, 0.95) 0%,
-      rgba(10, 9, 9, 0.6) 50%,
-      rgba(10, 9, 9, 0.1) 100%
+      rgba(14, 16, 20, 0.97) 0%,
+      rgba(14, 16, 20, 0.6) 50%,
+      rgba(14, 16, 20, 0.1) 100%
     );
   }
 
@@ -148,7 +158,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: overlay;
@@ -262,7 +272,7 @@
 
   .service-option.selected {
     border-color: var(--primary);
-    background: rgba(200, 36, 74, 0.1);
+    background: rgba(212, 160, 23, 0.08);
     color: var(--primary);
   }
 
@@ -296,7 +306,7 @@
   }
 
   .xpel-product-card:hover {
-    border-color: rgba(200, 36, 74, 0.4);
+    border-color: rgba(212, 160, 23, 0.4);
     transform: translateY(-4px);
   }
 
@@ -307,7 +317,7 @@
   }
 
   .review-card:hover {
-    border-color: rgba(200, 36, 74, 0.3);
+    border-color: rgba(212, 160, 23, 0.3);
   }
 
   .nav-link {
@@ -341,6 +351,7 @@
     transform: scaleX(1);
   }
 
+  /* Primary CTA — amber/gold, dark text for contrast */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -350,18 +361,19 @@
     background: var(--primary);
     color: var(--primary-foreground);
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-family: var(--font-sans);
     cursor: pointer;
     border: none;
-    transition: background 0.25s ease, transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: background 0.25s ease, transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.25s ease;
   }
 
   .btn-primary:hover {
-    background: #E03558;
+    background: #E8B420;
     transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(212, 160, 23, 0.3);
   }
 
   .btn-outline {
@@ -378,7 +390,7 @@
     text-transform: uppercase;
     font-family: var(--font-sans);
     cursor: pointer;
-    border: 1px solid rgba(245, 242, 238, 0.3);
+    border: 1px solid rgba(240, 238, 233, 0.25);
     transition: border-color 0.25s ease, color 0.25s ease, transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
@@ -435,8 +447,8 @@
 [dir="rtl"] .hero-scrim-left {
   background: linear-gradient(
     to left,
-    rgba(10, 9, 9, 0.85) 0%,
-    rgba(10, 9, 9, 0.5) 50%,
+    rgba(14, 16, 20, 0.88) 0%,
+    rgba(14, 16, 20, 0.5) 50%,
     transparent 100%
   );
 }
@@ -473,5 +485,5 @@
 
 .lang-switcher button:hover:not(.active) {
   color: var(--foreground);
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.04);
 }

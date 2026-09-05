@@ -53,7 +53,8 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-background/95 backdrop-blur-md border-b border-border' :'bg-transparent'
+            ? 'bg-[#0E1014]/96 backdrop-blur-md border-b border-[#252A34]'
+            : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -131,6 +132,8 @@ export default function Header() {
             </div>
           </div>
         </div>
+        {/* Amber accent line — Rock Shield signature */}
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       </header>
 
       {/* Mobile Menu Overlay */}
@@ -139,7 +142,7 @@ export default function Header() {
         className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
-        style={{ background: 'rgba(10,9,9,0.98)', backdropFilter: 'blur(20px)' }}
+        style={{ background: 'rgba(14,16,20,0.98)', backdropFilter: 'blur(20px)' }}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation menu"

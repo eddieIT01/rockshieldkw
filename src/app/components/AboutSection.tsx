@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import AppImage from '@/components/ui/AppImage';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function AboutSection() {
@@ -23,11 +24,11 @@ export default function AboutSection() {
   }, []);
 
   const features = [
-    { title: t?.about_feat_1_title, desc: t?.about_feat_1_desc },
-    { title: t?.about_feat_2_title, desc: t?.about_feat_2_desc },
-    { title: t?.about_feat_3_title, desc: t?.about_feat_3_desc },
-    { title: t?.about_feat_4_title, desc: t?.about_feat_4_desc },
-  ];
+  { title: t?.about_feat_1_title, desc: t?.about_feat_1_desc },
+  { title: t?.about_feat_2_title, desc: t?.about_feat_2_desc },
+  { title: t?.about_feat_3_title, desc: t?.about_feat_3_desc },
+  { title: t?.about_feat_4_title, desc: t?.about_feat_4_desc }];
+
 
   return (
     <section ref={sectionRef} id="about" className="py-24 lg:py-32 bg-background">
@@ -50,56 +51,79 @@ export default function AboutSection() {
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-10">
-              {features?.map((item) => (
-                <div key={item?.title} className="flex flex-col gap-2">
+              {features?.map((item) =>
+              <div key={item?.title} className="flex flex-col gap-2">
                   <div className="w-6 h-px bg-primary" />
                   <h4 className="text-foreground font-semibold text-sm">{item?.title}</h4>
                   <p className="text-muted-foreground text-xs leading-relaxed">{item?.desc}</p>
                 </div>
-              ))}
+              )}
             </div>
 
             <Link
               href="/about"
-              className="text-sm text-primary hover:text-foreground transition-colors tracking-widest uppercase font-medium flex items-center gap-2"
-            >
+              className="text-sm text-primary hover:text-foreground transition-colors tracking-widest uppercase font-medium flex items-center gap-2">
+              
               {t?.about_link}
               <span>→</span>
             </Link>
           </div>
 
-          {/* Right — Visual */}
+          {/* Right — Real Rock Shield imagery + stats */}
           <div className="reveal-up">
             <div className="relative">
-              <div className="bg-card border border-border p-10 lg:p-14">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="flex flex-col gap-2 border-b border-border pb-8">
-                    <span className="font-display text-4xl font-semibold text-foreground">4.7</span>
-                    <span className="text-primary text-sm">★★★★★</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_rating}</span>
-                  </div>
-                  <div className="flex flex-col gap-2 border-b border-border pb-8">
-                    <span className="font-display text-4xl font-semibold text-foreground">62+</span>
-                    <span className="text-primary text-sm">{t?.about_stat_reviews}</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_verified}</span>
-                  </div>
-                  <div className="flex flex-col gap-2 pt-2">
-                    <span className="font-display text-4xl font-semibold text-foreground">6</span>
-                    <span className="text-primary text-sm">{t?.about_stat_services}</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_protection}</span>
-                  </div>
-                  <div className="flex flex-col gap-2 pt-2">
-                    <span className="font-display text-4xl font-semibold text-foreground">XPEL</span>
-                    <span className="text-primary text-sm">{t?.about_stat_xpel}</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_xpel_sub}</span>
-                  </div>
+              {/* Real Rock Shield vehicle image */}
+              <div className="relative aspect-[4/3] overflow-hidden bg-card border border-border mb-6">
+                <AppImage
+                  src="https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp"
+                  alt="Rock Shield Kuwait — XPEL paint protection film installation on a Lamborghini"
+                  fill
+                  className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw" />
+                
+                {/* Amber corner accent */}
+                <div className="absolute top-0 left-0 w-10 h-0.5 bg-primary" />
+                <div className="absolute top-0 left-0 w-0.5 h-10 bg-primary" />
+                {/* XPEL badge overlay */}
+                <div className="absolute bottom-4 right-4 glass-dark px-3 py-2 flex items-center gap-2">
+                  <AppImage
+                    src="https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL.png"
+                    alt="XPEL authorized installer"
+                    width={56}
+                    height={18}
+                    className="h-4 w-auto object-contain opacity-90" />
+                  
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-primary/30" />
+
+              {/* Stats row */}
+              <div className="grid grid-cols-4 gap-4">
+                <div className="bg-card border border-border p-4 flex flex-col gap-1">
+                  <span className="font-display text-2xl font-semibold text-foreground">4.7</span>
+                  <span className="text-primary text-xs">★★★★★</span>
+                  <span className="text-muted-foreground text-[10px] tracking-wide">{t?.about_stat_rating}</span>
+                </div>
+                <div className="bg-card border border-border p-4 flex flex-col gap-1">
+                  <span className="font-display text-2xl font-semibold text-foreground">62+</span>
+                  <span className="text-primary text-xs">{t?.about_stat_reviews}</span>
+                  <span className="text-muted-foreground text-[10px] tracking-wide">{t?.about_stat_verified}</span>
+                </div>
+                <div className="bg-card border border-border p-4 flex flex-col gap-1">
+                  <span className="font-display text-2xl font-semibold text-foreground">6</span>
+                  <span className="text-primary text-xs">{t?.about_stat_services}</span>
+                  <span className="text-muted-foreground text-[10px] tracking-wide">{t?.about_stat_protection}</span>
+                </div>
+                <div className="bg-card border border-border p-4 flex flex-col gap-1">
+                  <span className="font-display text-lg font-semibold text-primary">XPEL</span>
+                  <span className="text-muted-foreground text-[10px] tracking-wide leading-tight">{t?.about_stat_xpel}</span>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 border-r-2 border-b-2 border-primary/25" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

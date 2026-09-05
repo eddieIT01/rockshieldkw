@@ -5,55 +5,55 @@ import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 
 const products = [
-{
-  id: 'ultimate-plus',
-  name: 'XPEL ULTIMATE PLUS',
-  tagline: 'The world\'s first self-healing PPF',
-  description: 'Unparalleled high gloss finish with improved impact protection. Guards against gravel, oils, bug acids, and bird droppings.',
-  logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/ULTIMATE-PLUS-Logo-1024x241-1.png',
-  category: 'Paint Protection'
-},
-{
-  id: 'stealth',
-  name: 'XPEL STEALTH',
-  tagline: 'As smooth as satin',
-  description: 'Self-healing film for matte, magno, frozen, or frosted finishes. Protect gloss paint with a whole new look.',
-  logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-st.png',
-  category: 'Paint Protection'
-},
-{
-  id: 'prime',
-  name: 'XPEL PRIME',
-  tagline: 'Precision window film',
-  description: 'Reduces infrared heat, cuts glare, and protects from harmful UV rays. Multilayer sputter film — virtually undetectable.',
-  logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-p.png',
-  category: 'Window Tint'
-},
-{
-  id: 'fusion-plus',
-  name: 'XPEL FUSION PLUS',
-  tagline: 'Molecular-level protection',
-  description: 'Silicon-based ceramic coating that bonds at the molecular level. Hydrophobic, UV-resistant, and scratch-resistant.',
-  logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-fu.png',
-  category: 'Ceramic Coating'
-},
-{
-  id: 'rx',
-  name: 'XPEL RX',
-  tagline: 'Antimicrobial film technology',
-  description: 'Specially formulated to resist microbe growth. Contains zinc pyrithione — available in high gloss and matte.',
-  logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-DAP-11-LOGO.png',
-  category: 'Specialty Film'
-},
-{
-  id: 'vision',
-  name: 'XPEL VISION',
-  tagline: 'Home & office window film',
-  description: 'Solar and security film solutions for any space. Reduces heat, lowers energy costs, and maintains comfort.',
-  logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-v.png',
-  category: 'Window Film'
-}];
-
+  {
+    id: 'ultimate-plus',
+    name: 'XPEL ULTIMATE PLUS',
+    tagline: "The world\'s first self-healing PPF",
+    description: 'Unparalleled high gloss finish with improved impact protection. Guards against gravel, oils, bug acids, and bird droppings.',
+    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/ULTIMATE-PLUS-Logo-1024x241-1.png',
+    category: 'Paint Protection'
+  },
+  {
+    id: 'stealth',
+    name: 'XPEL STEALTH',
+    tagline: 'As smooth as satin',
+    description: 'Self-healing film for matte, magno, frozen, or frosted finishes. Protect gloss paint with a whole new look.',
+    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-st.png',
+    category: 'Paint Protection'
+  },
+  {
+    id: 'prime',
+    name: 'XPEL PRIME',
+    tagline: 'Precision window film',
+    description: 'Reduces infrared heat, cuts glare, and protects from harmful UV rays. Multilayer sputter film — virtually undetectable.',
+    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-p.png',
+    category: 'Window Tint'
+  },
+  {
+    id: 'fusion-plus',
+    name: 'XPEL FUSION PLUS',
+    tagline: 'Molecular-level protection',
+    description: 'Silicon-based ceramic coating that bonds at the molecular level. Hydrophobic, UV-resistant, and scratch-resistant.',
+    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-fu.png',
+    category: 'Ceramic Coating'
+  },
+  {
+    id: 'rx',
+    name: 'XPEL RX',
+    tagline: 'Antimicrobial film technology',
+    description: 'Specially formulated to resist microbe growth. Contains zinc pyrithione — available in high gloss and matte.',
+    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-DAP-11-LOGO.png',
+    category: 'Specialty Film'
+  },
+  {
+    id: 'vision',
+    name: 'XPEL VISION',
+    tagline: 'Home & office window film',
+    description: 'Solar and security film solutions for any space. Reduces heat, lowers energy costs, and maintains comfort.',
+    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-v.png',
+    category: 'Window Film'
+  }
+];
 
 export default function XpelProductsSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -95,33 +95,33 @@ export default function XpelProductsSection() {
               alt="XPEL authorized distributor and installer"
               width={100}
               height={32}
-              className="h-7 w-auto object-contain opacity-80" />
-            
+              className="h-7 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+            />
             <span className="text-xs text-muted-foreground tracking-widest uppercase">Authorized Distributor &amp; Installer</span>
           </div>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products?.map((product, i) =>
-          <div
-            key={product?.id}
-            className="reveal-up group bg-background border border-border hover:border-primary/40 transition-all duration-300 p-8 flex flex-col gap-5"
-            style={{ transitionDelay: `${i * 80}ms` }}>
-            
+        {/* Products Grid — varied sizing for visual interest */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {products?.map((product, i) => (
+            <div
+              key={product?.id}
+              className="reveal-up group bg-background border border-border hover:border-primary/35 transition-all duration-300 p-8 flex flex-col gap-5"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
               <div className="flex items-start justify-between">
-                <span className="text-xs text-primary tracking-widest uppercase font-medium bg-primary/10 px-2 py-1 rounded-sm">
+                <span className="text-xs text-primary tracking-widest uppercase font-medium border border-primary/30 px-2 py-1">
                   {product?.category}
                 </span>
               </div>
               <div className="h-10 flex items-center">
                 <AppImage
-                src={product?.logo}
-                alt={`${product?.name} logo`}
-                width={160}
-                height={40}
-                className="h-8 w-auto object-contain object-left" />
-              
+                  src={product?.logo}
+                  alt={`${product?.name} logo`}
+                  width={160}
+                  height={40}
+                  className="h-8 w-auto object-contain object-left brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity"
+                />
               </div>
               <div>
                 <p className="text-primary text-xs font-medium tracking-wide mb-2">{product?.tagline}</p>
@@ -129,25 +129,25 @@ export default function XpelProductsSection() {
               </div>
               <div className="mt-auto pt-4 border-t border-border">
                 <Link
-                href={`/products#${product?.id}`}
-                className="text-xs text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase font-medium">
-                
+                  href={`/products#${product?.id}`}
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase font-medium"
+                >
                   Learn More →
                 </Link>
               </div>
             </div>
-          )}
+          ))}
         </div>
 
         <div className="mt-12 text-center reveal-up">
           <Link
             href="/products"
-            className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase font-medium border border-border hover:border-primary/40 px-8 py-4 inline-block">
-            
+            className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase font-medium border border-border hover:border-primary/40 px-8 py-4 inline-block"
+          >
             View All Products
           </Link>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

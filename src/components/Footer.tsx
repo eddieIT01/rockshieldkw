@@ -1,9 +1,14 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-10">
@@ -27,9 +32,8 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-              Kuwait&apos;s authorized XPEL distributor &amp; installer.<br />
-              Protection. Precision. Craftsmanship.
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs whitespace-pre-line">
+              {t?.footer_tagline}
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -74,14 +78,14 @@ export default function Footer() {
           {/* Links */}
           <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Services</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">{t?.footer_services}</span>
               {[
-                { label: 'Paint Protection Film', href: '/services#ppf' },
-                { label: 'Window Tint', href: '/services#window-tint' },
-                { label: 'Ceramic Coating', href: '/services#ceramic' },
-                { label: 'Detailing', href: '/services#detailing' },
-                { label: 'Window Shield', href: '/services#window-shield' },
-                { label: 'Painting', href: '/services#painting' }
+                { label: t?.service_ppf_title, href: '/services#ppf' },
+                { label: t?.service_tint_title, href: '/services#window-tint' },
+                { label: t?.service_ceramic_title, href: '/services#ceramic' },
+                { label: t?.service_detailing_title, href: '/services#detailing' },
+                { label: t?.service_shield_title, href: '/services#window-shield' },
+                { label: t?.service_painting_title, href: '/services#painting' }
               ]?.map((s) => (
                 <Link key={s?.label} href={s?.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">
                   {s?.label}
@@ -89,13 +93,13 @@ export default function Footer() {
               ))}
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Company</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">{t?.footer_company}</span>
               {[
-                { label: 'About', href: '/about' },
-                { label: 'Products', href: '/products' },
-                { label: 'Locations', href: '/locations' },
-                { label: 'Book Appointment', href: '/booking' },
-                { label: 'Contact', href: '/contact' }
+                { label: t?.nav_about, href: '/about' },
+                { label: t?.nav_products, href: '/products' },
+                { label: t?.nav_locations, href: '/locations' },
+                { label: t?.nav_book, href: '/booking' },
+                { label: t?.nav_contact, href: '/contact' }
               ]?.map((l) => (
                 <Link key={l?.label} href={l?.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">
                   {l?.label}
@@ -103,19 +107,17 @@ export default function Footer() {
               ))}
             </div>
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Contact</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">{t?.footer_contact}</span>
               <a href="tel:+96560422211" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
                 +965 604 222 11
               </a>
               <a href="mailto:info@rockshieldkw.com" className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium">
                 info@rockshieldkw.com
               </a>
-              <span className="text-sm text-muted-foreground font-medium">Mon–Sat: 10AM–8PM</span>
-              <span className="text-sm text-muted-foreground font-medium">Friday: Closed</span>
-              <address className="text-sm text-muted-foreground font-medium not-italic leading-relaxed">
-                Shwaikh Industrial<br />
-                Block 1, 13 ST, 107<br />
-                Kuwait
+              <span className="text-sm text-muted-foreground font-medium">{t?.contact_hours_weekdays}</span>
+              <span className="text-sm text-primary font-medium">{t?.contact_hours_friday}</span>
+              <address className="text-sm text-muted-foreground font-medium not-italic leading-relaxed whitespace-pre-line">
+                {t?.contact_address}
               </address>
             </div>
           </div>
@@ -124,10 +126,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2026 Rock Shield Kuwait. All rights reserved.
+            {t?.footer_copyright}
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-xs text-muted-foreground">XPEL Authorized Distributor &amp; Installer</span>
+            <span className="text-xs text-muted-foreground">{t?.footer_xpel_badge}</span>
           </div>
         </div>
       </div>

@@ -5,21 +5,24 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
-
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Products', href: '/products' },
-  { label: 'Locations', href: '/locations' },
-  { label: 'Contact', href: '/contact' }
-];
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const menuRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav_home, href: '/' },
+    { label: t.nav_about, href: '/about' },
+    { label: t.nav_services, href: '/services' },
+    { label: t.nav_products, href: '/products' },
+    { label: t.nav_locations, href: '/locations' },
+    { label: t.nav_contact, href: '/contact' }
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -91,8 +94,9 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Desktop CTA */}
+            {/* Desktop CTA + Language */}
             <div className="hidden lg:flex items-center gap-4">
+              <LanguageSwitcher />
               <a
                 href="tel:+96560422211"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
@@ -105,23 +109,26 @@ export default function Header() {
                 href="/booking"
                 className="btn-primary text-xs px-5 py-3 tracking-widest uppercase"
               >
-                Book Appointment
+                {t.nav_book}
               </Link>
             </div>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              className="lg:hidden p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary rounded"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
-            >
-              {menuOpen ? (
-                <Icon name="XMarkIcon" size={24} />
-              ) : (
-                <Icon name="Bars3Icon" size={24} />
-              )}
-            </button>
+            {/* Mobile: Language + Menu Toggle */}
+            <div className="lg:hidden flex items-center gap-3">
+              <LanguageSwitcher />
+              <button
+                className="p-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary rounded"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+              >
+                {menuOpen ? (
+                  <Icon name="XMarkIcon" size={24} />
+                ) : (
+                  <Icon name="Bars3Icon" size={24} />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -184,7 +191,7 @@ export default function Header() {
               WhatsApp
             </a>
             <Link href="/booking" className="btn-primary text-center mt-2 tracking-widest uppercase text-sm">
-              Book Appointment
+              {t.nav_book}
             </Link>
           </div>
         </div>

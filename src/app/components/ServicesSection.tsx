@@ -2,60 +2,56 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
-
-const services = [
-  {
-    id: 'ppf',
-    number: '01',
-    title: 'Paint Protection Film',
-    shortTitle: 'PPF',
-    description: 'Self-healing XPEL film that shields your paint from stone chips, scratches, and environmental damage — virtually invisible.',
-    href: '/services#ppf'
-  },
-  {
-    id: 'window-tint',
-    number: '02',
-    title: 'Window Tint',
-    shortTitle: 'Tint',
-    description: 'Reduce heat, block UV rays, and enhance privacy with XPEL PRIME window film — engineered for Kuwait\'s climate.',
-    href: '/services#window-tint'
-  },
-  {
-    id: 'window-shield',
-    number: '03',
-    title: 'Window Shield',
-    shortTitle: 'Shield',
-    description: 'Front windshield protection film that guards against wind, debris, and road hazards without compromising clarity.',
-    href: '/services#window-shield'
-  },
-  {
-    id: 'ceramic',
-    number: '04',
-    title: 'Ceramic Coating',
-    shortTitle: 'Ceramic',
-    description: 'XPEL FUSION PLUS bonds at the molecular level — delivering hydrophobic protection, gloss, and UV resistance.',
-    href: '/services#ceramic'
-  },
-  {
-    id: 'detailing',
-    number: '05',
-    title: 'Detailing Services',
-    shortTitle: 'Detail',
-    description: 'Meticulous attention to every surface. Tailored solutions that restore and maintain your vehicle\'s showroom condition.',
-    href: '/services#detailing'
-  },
-  {
-    id: 'painting',
-    number: '06',
-    title: 'Painting',
-    shortTitle: 'Paint',
-    description: 'Professional automotive painting with custom finishes — metallic, pearlescent, or factory-matched precision.',
-    href: '/services#painting'
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      id: 'ppf',
+      number: '01',
+      title: t?.service_ppf_title,
+      description: t?.service_ppf_desc,
+      href: '/services#ppf'
+    },
+    {
+      id: 'window-tint',
+      number: '02',
+      title: t?.service_tint_title,
+      description: t?.service_tint_desc,
+      href: '/services#window-tint'
+    },
+    {
+      id: 'window-shield',
+      number: '03',
+      title: t?.service_shield_title,
+      description: t?.service_shield_desc,
+      href: '/services#window-shield'
+    },
+    {
+      id: 'ceramic',
+      number: '04',
+      title: t?.service_ceramic_title,
+      description: t?.service_ceramic_desc,
+      href: '/services#ceramic'
+    },
+    {
+      id: 'detailing',
+      number: '05',
+      title: t?.service_detailing_title,
+      description: t?.service_detailing_desc,
+      href: '/services#detailing'
+    },
+    {
+      id: 'painting',
+      number: '06',
+      title: t?.service_painting_title,
+      description: t?.service_painting_desc,
+      href: '/services#painting'
+    }
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -82,22 +78,22 @@ export default function ServicesSection() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-primary" />
-              <span className="text-primary text-xs font-semibold tracking-[0.3em] uppercase">What We Do</span>
+              <span className="text-primary text-xs font-semibold tracking-[0.3em] uppercase">{t?.services_eyebrow}</span>
             </div>
-            <h2 className="font-display text-section-title text-foreground">
-              Six Ways We<br />Protect Your Vehicle
+            <h2 className="font-display text-section-title text-foreground whitespace-pre-line">
+              {t?.services_heading}
             </h2>
           </div>
           <Link
             href="/services"
             className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase font-medium flex items-center gap-2 self-start lg:self-auto"
           >
-            All Services
+            {t?.services_all}
             <span className="text-primary">→</span>
           </Link>
         </div>
 
-        {/* Services Grid — asymmetric bento layout */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {services?.map((service, i) => (
             <Link
@@ -131,7 +127,7 @@ export default function ServicesSection() {
             href="/booking"
             className="btn-primary px-10 py-4 text-sm tracking-widest uppercase inline-block"
           >
-            Book an Appointment
+            {t?.services_book}
           </Link>
         </div>
       </div>

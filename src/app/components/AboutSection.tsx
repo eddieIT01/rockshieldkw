@@ -2,9 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,6 +22,13 @@ export default function AboutSection() {
     return () => observer?.disconnect();
   }, []);
 
+  const features = [
+    { title: t?.about_feat_1_title, desc: t?.about_feat_1_desc },
+    { title: t?.about_feat_2_title, desc: t?.about_feat_2_desc },
+    { title: t?.about_feat_3_title, desc: t?.about_feat_3_desc },
+    { title: t?.about_feat_4_title, desc: t?.about_feat_4_desc },
+  ];
+
   return (
     <section ref={sectionRef} id="about" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -28,25 +37,20 @@ export default function AboutSection() {
           <div className="reveal-left">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-primary" />
-              <span className="text-primary text-xs font-semibold tracking-[0.3em] uppercase">About Rock Shield</span>
+              <span className="text-primary text-xs font-semibold tracking-[0.3em] uppercase">{t?.about_eyebrow}</span>
             </div>
-            <h2 className="font-display text-section-title text-foreground mb-6">
-              Your Vehicle.<br />Our Obsession.
+            <h2 className="font-display text-section-title text-foreground mb-6 whitespace-pre-line">
+              {t?.about_heading}
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              At Rock Shield, we are passionate about preserving and enhancing the beauty of your vehicle. With a commitment to excellence and a dedication to quality craftsmanship, we specialize in providing top-tier automotive protection services.
+              {t?.about_p1}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              As Kuwait&apos;s authorized XPEL distributor and installer, we bring world-class protection technology to every vehicle that enters our facility in Shwaikh Industrial. Our team of skilled professionals delivers results that exceed expectations — every time.
+              {t?.about_p2}
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-10">
-              {[
-                { title: 'Expert Engineers', desc: 'Highly skilled professionals with deep expertise in automotive protection.' },
-                { title: 'Guaranteed Service', desc: 'We stand behind the quality of every installation we perform.' },
-                { title: 'XPEL Certified', desc: 'Authorized distributor and installer of the world\'s leading PPF brand.' },
-                { title: 'Trusted Results', desc: 'Proven track record of superior results and customer satisfaction.' }
-              ]?.map((item) => (
+              {features?.map((item) => (
                 <div key={item?.title} className="flex flex-col gap-2">
                   <div className="w-6 h-px bg-primary" />
                   <h4 className="text-foreground font-semibold text-sm">{item?.title}</h4>
@@ -59,7 +63,7 @@ export default function AboutSection() {
               href="/about"
               className="text-sm text-primary hover:text-foreground transition-colors tracking-widest uppercase font-medium flex items-center gap-2"
             >
-              Our Story
+              {t?.about_link}
               <span>→</span>
             </Link>
           </div>
@@ -67,33 +71,30 @@ export default function AboutSection() {
           {/* Right — Visual */}
           <div className="reveal-up">
             <div className="relative">
-              {/* Large stat block */}
               <div className="bg-card border border-border p-10 lg:p-14">
                 <div className="grid grid-cols-2 gap-8">
                   <div className="flex flex-col gap-2 border-b border-border pb-8">
                     <span className="font-display text-4xl font-semibold text-foreground">4.7</span>
                     <span className="text-primary text-sm">★★★★★</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">Google Rating</span>
+                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_rating}</span>
                   </div>
                   <div className="flex flex-col gap-2 border-b border-border pb-8">
                     <span className="font-display text-4xl font-semibold text-foreground">62+</span>
-                    <span className="text-primary text-sm">Reviews</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">Verified Customers</span>
+                    <span className="text-primary text-sm">{t?.about_stat_reviews}</span>
+                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_verified}</span>
                   </div>
                   <div className="flex flex-col gap-2 pt-2">
                     <span className="font-display text-4xl font-semibold text-foreground">6</span>
-                    <span className="text-primary text-sm">Services</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">Protection Solutions</span>
+                    <span className="text-primary text-sm">{t?.about_stat_services}</span>
+                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_protection}</span>
                   </div>
                   <div className="flex flex-col gap-2 pt-2">
                     <span className="font-display text-4xl font-semibold text-foreground">XPEL</span>
-                    <span className="text-primary text-sm">Authorized</span>
-                    <span className="text-muted-foreground text-xs tracking-wide">Distributor &amp; Installer</span>
+                    <span className="text-primary text-sm">{t?.about_stat_xpel}</span>
+                    <span className="text-muted-foreground text-xs tracking-wide">{t?.about_stat_xpel_sub}</span>
                   </div>
                 </div>
               </div>
-
-              {/* Accent line */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-primary/30" />
             </div>
           </div>

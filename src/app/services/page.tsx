@@ -2,39 +2,10 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import AppImage from '@/components/ui/AppImage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import { useLanguage } from '@/context/LanguageContext';
-
-// Real Rock Shield / XPEL brand photography from official rockshieldkw.com
-const serviceImages: Record<string, {src: string;alt: string;}> = {
-  ppf: {
-    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp",
-    alt: 'XPEL Ultimate Plus paint protection film on a Lamborghini at Rock Shield Kuwait'
-  },
-  'window-tint': {
-    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-p.png",
-    alt: 'XPEL PRIME window tint film — Rock Shield Kuwait authorized installer'
-  },
-  'window-shield': {
-    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/ULTIMATE-PLUS-Logo-1024x241-1.png",
-    alt: 'XPEL windshield protection film — Rock Shield Kuwait'
-  },
-  ceramic: {
-    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-fu.png",
-    alt: 'XPEL FUSION PLUS ceramic coating — Rock Shield Kuwait authorized installer'
-  },
-  detailing: {
-    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp",
-    alt: 'Professional car detailing service at Rock Shield Kuwait'
-  },
-  painting: {
-    src: "https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-st.png",
-    alt: 'Professional automotive painting service — Rock Shield Kuwait'
-  }
-};
 
 export default function ServicesPage() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -176,7 +147,6 @@ export default function ServicesPage() {
 
         {/* Services */}
         {services.map((service, i) => {
-          const img = serviceImages[service.id];
           return (
             <section
               key={service.id}
@@ -218,14 +188,7 @@ export default function ServicesPage() {
 
                   {/* Image */}
                   <div className={`reveal-up ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className="relative aspect-[4/3] overflow-hidden bg-card border border-border">
-                      <AppImage
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover object-center hover:scale-105 transition-transform duration-700"
-                        sizes="(max-width: 1024px) 100vw, 50vw" />
-                      
+                    <div className="relative aspect-[4/3] overflow-hidden bg-card border border-border" aria-label="Verified service photography pending approval">
                       {/* Red accent corner */}
                       <div className="absolute top-0 left-0 w-12 h-0.5 bg-primary" />
                       <div className="absolute top-0 left-0 w-0.5 h-12 bg-primary" />

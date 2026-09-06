@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import AppImage from '@/components/ui/AppImage';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function HeroSection() {
@@ -28,18 +27,11 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-end overflow-hidden"
       aria-label="Rock Shield Kuwait hero">
 
-      {/* Background Image with parallax — real Rock Shield / XPEL vehicle */}
       <div
-        className="absolute inset-0 will-change-transform"
-        style={{ transform: `translateY(${scrollY * 0.3}px)` }}>
-        <AppImage
-          src="https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp"
-          alt="Lamborghini Huracan STO with XPEL paint protection film applied by Rock Shield Kuwait"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw" />
-      </div>
+        className="absolute inset-0 bg-background will-change-transform"
+        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+        aria-hidden="true"
+      />
 
       {/* Gradient overlays — deep charcoal, not pure black */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0E1014] via-[#0E1014]/65 to-[#0E1014]/10" />

@@ -72,15 +72,8 @@ export default function AboutSection() {
           {/* Right — Real Rock Shield imagery + stats */}
           <div className="reveal-up">
             <div className="relative">
-              {/* Real Rock Shield vehicle image */}
               <div className="relative aspect-[4/3] overflow-hidden bg-card border border-border mb-6">
-                <AppImage
-                  src="https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp"
-                  alt="Rock Shield Kuwait — XPEL paint protection film installation on a Lamborghini"
-                  fill
-                  className="object-cover object-center hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 50vw" />
-                
+                <div className="absolute inset-0" aria-label="Verified Rock Shield photography pending approval" />
                 {/* Amber corner accent */}
                 <div className="absolute top-0 left-0 w-10 h-0.5 bg-primary" />
                 <div className="absolute top-0 left-0 w-0.5 h-10 bg-primary" />

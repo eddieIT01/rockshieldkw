@@ -41,14 +41,8 @@ export default function AboutPage() {
                   Kuwait&apos;s authorized XPEL distributor and installer — protecting vehicles with precision craftsmanship since day one.
                 </p>
               </div>
-              {/* Real Rock Shield vehicle image */}
               <div className="relative aspect-[4/3] overflow-hidden bg-card border border-border">
-                <img
-                  src="https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp"
-                  alt="Rock Shield Kuwait — XPEL paint protection film on a Lamborghini Huracan STO"
-                  className="w-full h-full object-cover object-center"
-                  loading="eager" />
-                
+                <div className="absolute inset-0" aria-label="Verified Rock Shield photography pending approval" />
                 {/* Amber corner accent */}
                 <div className="absolute top-0 left-0 w-10 h-0.5 bg-primary" />
                 <div className="absolute top-0 left-0 w-0.5 h-10 bg-primary" />

@@ -6,7 +6,6 @@ import ServicesSection from './components/ServicesSection';
 import XpelProductsSection from './components/XpelProductsSection';
 import AboutSection from './components/AboutSection';
 import TrustSection from './components/TrustSection';
-import BookingSection from './components/BookingSection';
 import ContactSection from './components/ContactSection';
 import WhatsAppFloat from './components/WhatsAppFloat';
 
@@ -21,7 +20,6 @@ export default function HomePage() {
         <XpelProductsSection />
         <TrustSection />
         <ContactSection />
-        <BookingSection />
       </main>
       <Footer />
       <WhatsAppFloat />

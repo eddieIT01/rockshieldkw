@@ -39,22 +39,14 @@ export const metadata: Metadata = {
     siteName: 'Rock Shield Kuwait',
     title: 'Rock Shield Kuwait — XPEL Authorized Protection Specialists',
     description: "Kuwait's authorized XPEL distributor & installer. PPF, Ceramic Coating, Window Tint — precision-applied in Shwaikh Industrial.",
-    images: [{
-      url: "https://img.rocket.new/generatedImages/rocket_gen_img_1b1c9b556-1765065088518.png",
-      width: 1200,
-      height: 630,
-      alt: 'Rock Shield Kuwait – XPEL Authorized Protection'
-    }]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rock Shield Kuwait — XPEL Authorized Protection',
     description: "Kuwait's authorized XPEL distributor & installer. PPF, Ceramic Coating, Window Tint.",
-    images: ['https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp']
   },
   icons: {
     icon: [{ url: 'https://rockshieldkw.com/wp-content/uploads/2024/04/cropped-favicon-32x32.png', sizes: '32x32', type: 'image/png' }],
-    apple: [{ url: "https://img.rocket.new/generatedImages/rocket_gen_img_1b1c9b556-1765065088518.png", sizes: '180x180' }]
   },
   robots: {
     index: true,
@@ -88,7 +80,6 @@ export default function RootLayout({
               "description": "Kuwait's authorized XPEL distributor & installer specializing in Paint Protection Film, Ceramic Coating, Window Tint, and Detailing.",
               "url": "https://rockshieldkw.com",
               "logo": "https://rockshieldkw.com/wp-content/uploads/2024/04/New-Project-120x105.png",
-              "image": "https://rockshieldkw.com/wp-content/uploads/2024/06/lamborghini-huracan-sto-015.webp",
               "telephone": "+96560422211",
               "email": "info@rockshieldkw.com",
               "address": {

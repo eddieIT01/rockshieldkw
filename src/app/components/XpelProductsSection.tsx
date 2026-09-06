@@ -3,57 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
-
-const products = [
-  {
-    id: 'ultimate-plus',
-    name: 'XPEL ULTIMATE PLUS',
-    tagline: "The world\'s first self-healing PPF",
-    description: 'Unparalleled high gloss finish with improved impact protection. Guards against gravel, oils, bug acids, and bird droppings.',
-    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/ULTIMATE-PLUS-Logo-1024x241-1.png',
-    category: 'Paint Protection'
-  },
-  {
-    id: 'stealth',
-    name: 'XPEL STEALTH',
-    tagline: 'As smooth as satin',
-    description: 'Self-healing film for matte, magno, frozen, or frosted finishes. Protect gloss paint with a whole new look.',
-    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-st.png',
-    category: 'Paint Protection'
-  },
-  {
-    id: 'prime',
-    name: 'XPEL PRIME',
-    tagline: 'Precision window film',
-    description: 'Reduces infrared heat, cuts glare, and protects from harmful UV rays. Multilayer sputter film — virtually undetectable.',
-    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-p.png',
-    category: 'Window Tint'
-  },
-  {
-    id: 'fusion-plus',
-    name: 'XPEL FUSION PLUS',
-    tagline: 'Molecular-level protection',
-    description: 'Silicon-based ceramic coating that bonds at the molecular level. Hydrophobic, UV-resistant, and scratch-resistant.',
-    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-fu.png',
-    category: 'Ceramic Coating'
-  },
-  {
-    id: 'rx',
-    name: 'XPEL RX',
-    tagline: 'Antimicrobial film technology',
-    description: 'Specially formulated to resist microbe growth. Contains zinc pyrithione — available in high gloss and matte.',
-    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-DAP-11-LOGO.png',
-    category: 'Specialty Film'
-  },
-  {
-    id: 'vision',
-    name: 'XPEL VISION',
-    tagline: 'Home & office window film',
-    description: 'Solar and security film solutions for any space. Reduces heat, lowers energy costs, and maintains comfort.',
-    logo: 'https://rockshieldkw.com/wp-content/uploads/2024/06/XPEL-v.png',
-    category: 'Window Film'
-  }
-];
+import { products } from '@/lib/products';
 
 export default function XpelProductsSection() {
   const sectionRef = useRef<HTMLElement>(null);
